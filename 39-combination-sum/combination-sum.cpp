@@ -1,6 +1,6 @@
 class Solution {
 public:
-    void solve(vector<int>& candidates, int target, int i, int sum, vector<int> combination, vector<vector<int>>& ans) {
+    void solve(vector<int>& candidates, int target, int i, int sum, vector<int> &combination, vector<vector<int>>& ans) {
         if(sum==target){
             ans.push_back(combination);
             return;
@@ -21,7 +21,8 @@ public:
 
     vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
         vector<vector<int>> ans;
-        solve(candidates, target, 0, 0, {}, ans);
+        vector<int> combination;
+        solve(candidates, target, 0, 0, combination, ans);
 
         return ans;
     }
